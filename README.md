@@ -1,6 +1,9 @@
-#Nebraska basketball scoring droughts
+# Nebraska basketball scoring droughts
 
-- 1. Scrape game IDs
-- 2. Scrape game play-by-play data
-- 3. Sort play-by-play data
-- 4. Print summaries
+- Scrape game IDs into file.
+- Scrape game play-by-play data into file.
+- Load game data into python.
+- Sort play-by-play data.
+- Print summaries.
+
+- (Easily configured to adjust for multiple seasons and team data sets.)
