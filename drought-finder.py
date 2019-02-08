@@ -7,7 +7,7 @@ import json
 years = ["2019"]
 
 # to get another team, change lines 10, 47, 61, 92, 112
-team = "Ohio+St."
+team = "Nebraska"
 
 
 #loop through each year in the list above
@@ -44,7 +44,7 @@ for year in years:
     
         game_date = game["ymd"]
         
-        if game["team1"] == "Ohio St.": # in game["input"] team names aren't slugified (e.g. "Ohio State")
+        if game["team1"] == "Nebraska": # in game["input"] team names aren't slugified (e.g. "Ohio State")
             site = "Road"
             game_opponent = game["team2"]
         else: 
@@ -58,7 +58,7 @@ for year in years:
         game["input"] = sorted(game["input"], key=lambda k: k["TL"], reverse=True)
         
         #find all the scoring possessions
-        if game["team1"] == "Ohio St.":
+        if game["team1"] == "Nebraska":
             nebraska = [p for p in game["input"] if p["VSc"] == 1] #Nebraska is away team
             opponent = [p for p in game["input"] if p["HSc"] == 1]
     
@@ -89,7 +89,7 @@ for year in years:
         # sort possessions by drought length
         nebraska_sorted = sorted(nebraska, key=lambda k: k["Dr"], reverse=True)
         opponent_sorted = sorted(opponent, key=lambda k: k["Dr"], reverse=True)
-        print("Longest Ohio State drought: %.2f" % nebraska_sorted[0]["Dr"])
+        print("Longest Nebraska drought: %.2f" % nebraska_sorted[0]["Dr"])
         print("Longest " + game_opponent + " drought: %.2f" % opponent_sorted[0]["Dr"])
         
         nebraska_droughts = [ p["Dr"] for p in nebraska_sorted ]
@@ -109,7 +109,7 @@ for year in years:
         
         print("3+ minute droughts for ", team, ": ", three_plus)
         
-        game_droughts["ohio-state"] = nebraska_droughts
+        game_droughts["nebraska"] = nebraska_droughts
         game_droughts["opponent"] = opponent_droughts
         game_droughts["droughts-by-length"] = droughts_by_length
                 
