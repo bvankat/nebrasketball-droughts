@@ -45,7 +45,7 @@ for year in years:
     
         game_date = game["ymd"]
         
-        if game["team1"] == "Nebraska": # in game["input"] team names aren't slugified (e.g. "Ohio State")
+        if game["team1"] == "Nebraska": # in game["input"] team names aren't slugified (e.g. "Ohio St.")
             site = "Road"
             game_opponent = game["team2"]
         else: 
