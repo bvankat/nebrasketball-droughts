@@ -28,6 +28,7 @@ for year in years:
         
     print(str(year) + " game count: " + str(len(games)))
    
+    # initializing list of droughts-per-game, compiled in seasonlong form, later saved to file   
     all_droughts = [] 
     
     # initialize count for seasonlong drought counts
@@ -83,7 +84,6 @@ for year in years:
         nebraska[0]["Dr"] = (40 - nebraska[0]["TL"])
     
         # create and save list of home and away droughts
-        
         game_droughts = {}
         
         # sort possessions by drought length
@@ -129,9 +129,9 @@ for year in years:
     
         
         
-    # save the new game data and drought_list to a file
-        
-        
+    # save the new game data and all_droughts to a file
+    # (inside the years loop, but outside the games loop)
+    
     with open(save_file, 'w') as outfile:
         json.dump(games, outfile, sort_keys=True, indent=4, separators=(',', ': '))
         
